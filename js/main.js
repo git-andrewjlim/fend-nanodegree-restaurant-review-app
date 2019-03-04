@@ -88,6 +88,7 @@ initMap = () => {
 
   updateRestaurants();
 }
+
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
