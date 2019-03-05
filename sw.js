@@ -1,9 +1,10 @@
 const cacheName = 'udacity-restaurant-cache-v1';
 
+
+/* Install Service Worker with cached files*/
 self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(cacheName).then(function(cache){
-            console.log('Service Working caching files');
 			return cache.addAll([
                 './',
                 './index.html',
@@ -22,8 +23,9 @@ self.addEventListener('install', function(event) {
 	);
 });
 
+
+/* Activate Service worker and delete unwanted cache files */
 self.addEventListener('activate', function(event) {
-    console.log('Service worker activated');
 	event.waitUntil(
 		caches.keys().then(function(cacheNames){
 			return Promise.all(
@@ -40,8 +42,9 @@ self.addEventListener('activate', function(event) {
 	);
 });
 
+
+/* Send fetch request for files - if it finds none (.catch), get from cache */
 self.addEventListener('fetch', function(event) {
-    console.log('Service Worker Fetching');
     event.respondWith(
         fetch(event.request).catch(function() {
             caches.match(event.request)
