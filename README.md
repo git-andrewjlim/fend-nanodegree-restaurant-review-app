@@ -1,3 +1,5 @@
+[Link to project] (https://git-andrewjlim.github.io/fend-nanodegree-restaurant-review-app/)
+
 # Mobile Web Specialist Certification Course
 ---
 #### _Three Stage Course Material Project - Restaurant Reviews_
