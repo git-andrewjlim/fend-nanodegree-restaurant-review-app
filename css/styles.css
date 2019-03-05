@@ -117,15 +117,28 @@ nav h1 a {
   /* height: 50px; */
   background-color: #444;
   align-items: center;
-  padding: 10px;
+  /* padding: 10px; */
+  padding: 10px 20px 0px;
 }
 .filter-options h2 {
   color: #f58500;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px;
+  /* margin: 0 20px; */
+  margin: 0;
 }
+
+.filter-options .dropdowns {
+  display: inline-block;
+}
+
+.filter-options label {
+  font-family: Arial,sans-serif;
+  font-size: 11pt;
+  color: #fff;
+}
+
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
@@ -166,7 +179,7 @@ nav h1 a {
   display: block;
   margin: 0;
   max-width: 100%;
-  min-height: 248px;
+  /* min-height: 248px; */
   min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -352,6 +365,24 @@ nav h1 a {
 @media (max-width: 465px) {
   .filter-options {
     text-align: center;
+  }
+
+  .filter-options label {
+    display: none;
+  }
+}
+
+@media (min-width: 466px) and (max-width: 640px) {
+  .filter-options h2 {
+    margin-bottom: 10px;
+  }
+  
+  .filter-options label {
+    display: block;
+  }
+
+  .filter-options select {
+    margin-left: 0;
   }
 }
 
