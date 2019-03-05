@@ -35,7 +35,7 @@ git@github.com:git-andrewjlim/fend-nanodegree-restaurant-review-app.git
 7. With your server running, visit the site: `http://localhost:8000`
 
 ## Project Link
-[Link to project](https://git-andrewjlim.github.io/fend-nanodegree-restaurant-review-app/))
+[Link to project](https://git-andrewjlim.github.io/fend-nanodegree-restaurant-review-app/)
 
 ## Topics Covered
 The project encompases all the following topics of the 'Front-End Applications' chapter:
