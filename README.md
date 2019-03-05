@@ -4,7 +4,7 @@ The Restaurant Reviews App is the seventh project for the <a target="_blank" hre
 ## About the Responsive Portfolio Page
 The Restaurant Reviews App is to show my skills with responsive design of a web page and implementing service worker caching.
 
-**Note:** _The caching does not work in offline mode but does display the page (without map and images) as part of failing gracefully._
+**Note:** _The map and images do not work in offline mode but does display the page (without map and images) as part of failing gracefully._
 
 ## Project Files
 This page requires the following (all included within the repository):
