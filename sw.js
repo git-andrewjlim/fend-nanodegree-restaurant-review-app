@@ -36,13 +36,15 @@ self.addEventListener('activate', function(event) {
 			);
 		}).catch(function(err){
             console.log('Service Worker error on retreiving keys', err);
-        }) 
+        })
 	);
 });
 
 self.addEventListener('fetch', function(event) {
     console.log('Service Worker Fetching');
     event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request))
-    )
+        fetch(event.request).catch(function() {
+            caches.match(event.request)
+        })
+    );
 });
