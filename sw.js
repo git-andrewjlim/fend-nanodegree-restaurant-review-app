@@ -13,7 +13,9 @@ self.addEventListener('install', function(event) {
                 'data/restaurants.json',
 				'img/simple-gray-texture.jpg'
 			]);
-		})
+		}).catch(function(err){
+            console.log('Service Worker install failure', err);
+        })
 	);
 });
 
