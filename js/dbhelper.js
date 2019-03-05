@@ -8,6 +8,7 @@ class DBHelper {
    * Change this to restaurants.json file location on your server.
    */
   static get DATABASE_URL() {
+    // uncomment this to use on local server
     // const port = 8000 // Change this to your server port
     // return `http://localhost:${port}/data/restaurants.json`;
     return `./data/restaurants.json`;
@@ -166,17 +167,6 @@ class DBHelper {
       })
       marker.addTo(newMap);
     return marker;
-  } 
-  /* static mapMarkerForRestaurant(restaurant, map) {
-    const marker = new google.maps.Marker({
-      position: restaurant.latlng,
-      title: restaurant.name,
-      url: DBHelper.urlForRestaurant(restaurant),
-      map: map,
-      animation: google.maps.Animation.DROP}
-    );
-    return marker;
-  } */
-
+  }
 }
 

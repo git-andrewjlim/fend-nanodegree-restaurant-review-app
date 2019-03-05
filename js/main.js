@@ -1,14 +1,14 @@
 let restaurants,
-  neighborhoods,
-  cuisines
-var newMap
-var markers = []
+    neighborhoods,
+    cuisines;
+var newMap;
+var markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added 
+  initMap();
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
  */
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
-    if (error) { // Got an error
+    if (error) {
       console.error(error);
     } else {
       self.neighborhoods = neighborhoods;
@@ -45,7 +45,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
  */
 fetchCuisines = () => {
   DBHelper.fetchCuisines((error, cuisines) => {
-    if (error) { // Got an error!
+    if (error) {
       console.error(error);
     } else {
       self.cuisines = cuisines;
@@ -89,19 +89,6 @@ initMap = () => {
   updateRestaurants();
 }
 
-/* window.initMap = () => {
-  let loc = {
-    lat: 40.722216,
-    lng: -73.987501
-  };
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: loc,
-    scrollwheel: false
-  });
-  updateRestaurants();
-} */
-
 /**
  * Update page and map for current restaurants.
  */
@@ -116,7 +103,7 @@ updateRestaurants = () => {
   const neighborhood = nSelect[nIndex].value;
 
   DBHelper.fetchRestaurantByCuisineAndNeighborhood(cuisine, neighborhood, (error, restaurants) => {
-    if (error) { // Got an error!
+    if (error) {
       console.error(error);
     } else {
       resetRestaurants(restaurants);
@@ -163,7 +150,6 @@ createRestaurantHTML = (restaurant) => {
   image.className = 'restaurant-img';
   image.setAttribute('alt', restaurant.alt_description);
   image.setAttribute('srcset', `./img/${restaurant.photograph}-medium.jpg 401w, ./img/${restaurant.photograph}-large.jpg 556w`);
-  // image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.src = `./img/${restaurant.photograph}-small.jpg`;
   li.append(image);
 
@@ -185,7 +171,7 @@ createRestaurantHTML = (restaurant) => {
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
-  return li
+  return li;
 }
 
 /**
@@ -202,18 +188,11 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 
-} 
-/* addMarkersToMap = (restaurants = self.restaurants) => {
-  restaurants.forEach(restaurant => {
-    // Add marker to the map
-    const marker = DBHelper.mapMarkerForRestaurant(restaurant, self.map);
-    google.maps.event.addListener(marker, 'click', () => {
-      window.location.href = marker.url
-    });
-    self.markers.push(marker);
-  });
-} */
+}
 
+/**
+ * Register service worker for caching files.
+ */
 navigator.serviceWorker.register('./sw.js').then(function(reg){
 	console.log('Service Worker Registered');
 }).catch(function(err){
