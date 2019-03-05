@@ -6,6 +6,8 @@ self.addEventListener('install', function(event) {
             console.log('Service Working caching files');
 			return cache.addAll([
                 './',
+                './index.html',
+                './restaurant.html',
                 './js/main.js',
                 './js/dbhelper.js',
                 './js/restaurant_info.js',
