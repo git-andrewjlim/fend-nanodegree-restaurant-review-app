@@ -1,4 +1,4 @@
-const cacheName = 'udacity-restaurant-cache-v2';
+const cacheName = 'udacity-restaurant-cache-v1';
 
 
 self.addEventListener('install', function(event) {
@@ -8,6 +8,7 @@ self.addEventListener('install', function(event) {
                 './js/main.js',
                 './js/dbhelper.js',
                 './js/restaurant_info.js',
+                './sw.js',
                 './css/styles.css',
                 './data/restaurants.json',
 				'./img/simple-gray-texture.jpg'
