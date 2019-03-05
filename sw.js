@@ -1,11 +1,11 @@
 const cacheName = 'udacity-restaurant-cache-v1';
 
-
 self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(cacheName).then(function(cache){
             console.log('Service Working caching files');
 			return cache.addAll([
+                './',
                 './js/main.js',
                 './js/dbhelper.js',
                 './js/restaurant_info.js',
