@@ -4,6 +4,7 @@ const cacheName = 'udacity-restaurant-cache-v1';
 self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open(cacheName).then(function(cache){
+            console.log('Service Working caching files');
 			return cache.addAll([
                 './js/main.js',
                 './js/dbhelper.js',
@@ -20,6 +21,7 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
+    console.log('Service worker activated');
 	event.waitUntil(
 		caches.keys().then(function(cacheNames){
 			return Promise.all(
@@ -30,7 +32,9 @@ self.addEventListener('activate', function(event) {
                     }
                 })
 			);
-		})
+		}).catch(function(err){
+            console.log('Service Worker error on retreiving keys', err);
+        }) 
 	);
 });
 
