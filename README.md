@@ -9,7 +9,7 @@ The Restaurant Reviews App is to show my skills with responsive design of a web 
 ## Project Files
 This page requires the following (all included within the repository):
 * HTML files (index.html, restaurant.html)
-* CSS file (styles.css)
+* CSS files (styles.css, normalize.min.css)
 * JavaScript files (dbhelper.js, main.js, restaurant_info.js)
 * Service Worker (sw.js)
 * JSON file (restaurants.json)
