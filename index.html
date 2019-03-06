@@ -13,13 +13,13 @@
 
 <body>
   <header>
-    <nav>
+    <nav id="breadcrumb" aria-label="breadcrumb" role="navigation">
       <h1><a tabindex="1" href="./">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
-    <section id="map-container">
+    <section id="map-container" aria-label="location" role="application">
       <div id="map"></div>
     </section>
     <section>
@@ -27,14 +27,14 @@
         <h2>Filter Results</h2>
         <div class="dropdowns">
           <label for="neighborhoods-select">Neighbourhood</label>
-          <select tabindex="2" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-            <option value="all">All Neighborhoods</option>
+          <select tabindex="2" id="neighborhoods-select" name="neighborhoods" aria-label="neighbourhood selection" role="listbox" onchange="updateRestaurants()">
+            <option value="all" role="option" aria-labelledby="neighborhoods-select">All Neighborhoods</option>
           </select>
         </div>
         <div class="dropdowns">
           <label for="cuisines-select">Cuisine</label>
-          <select tabindex="3" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-            <option value="all">All Cuisines</option>
+          <select tabindex="3" id="cuisines-select" name="cuisines" aria-label="cuisine selection" role="listbox" onchange="updateRestaurants()">
+            <option value="all" role="option" aria-labelledby="cuisines-select">All Cuisines</option>
           </select>
         </div>
       </div>
