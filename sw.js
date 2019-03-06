@@ -14,7 +14,6 @@ self.addEventListener('install', function(event) {
                 './js/restaurant_info.js',
                 './sw.js',
                 './css/styles.css',
-                './css/normalize.min.css',
                 './data/restaurants.json',
 				'./img/simple-gray-texture.jpg'
 			]);
