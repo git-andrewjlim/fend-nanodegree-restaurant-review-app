@@ -200,8 +200,12 @@ addMarkersToMap = (restaurants = self.restaurants) => {
 /**
  * Register service worker for caching files.
  */
-navigator.serviceWorker.register('./sw.js').then(function(reg){
-	console.log('Service Worker Registered');
-}).catch(function(err){
-	console.log('Service Worker Error: ', err);
-});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('./sw.js').then(function(reg){
+	    console.log('Service Worker Registered');
+    }).catch(function(err){
+	    console.log('Service Worker Error: ', err);
+    });
+  });
+}

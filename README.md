@@ -54,3 +54,5 @@ Additionally, this project incorporates the following:
 The majority of the files were developed by Udacity and were adapted to make the pages responsive, accessible and to use offline caching.
 
 The map uses the Mapbox API.
+
+The code for the fetch request was taken from: https://developers.google.com/web/fundamentals/primers/service-workers/
